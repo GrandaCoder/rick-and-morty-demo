@@ -1,4 +1,4 @@
-import instance from 'https://cdn.skypack.dev/axios';
+import axios from 'https://cdn.skypack.dev/axios';
 import { setupCache } from 'https://cdn.skypack.dev/axios-cache-interceptor';
 
 // import axios from 'axios';

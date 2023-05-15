@@ -1,13 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rick and morty</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+  <title>Rick and morty</title>
 </head>
+
 <body>
+  <nav class="navbar navbar-expand-md bg-dark sticky-top visible" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Rick and morty</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link " href="#">Characters</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Episodes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Locations</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- carousel -->
+  <div class="home-container">
+    <div id="carouselInterval" class="carousel slide " data-bs-ride="carousel">
+      <div class="carousel-inner ">
+        <div class="carousel-item active" data-bs-interval="5000">
+          <img src="assets/rickandmorty_1.webp" class="d-block carousel-img-size" alt="...">
+        </div>
+        <div class="carousel-item " data-bs-interval="5000">
+          <img src="assets/rickandmorty_2.webp" class="d-block carousel-img-size" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-lg">
+          <div class="container-fluid py-5 text-center">
+            <h1 class="display-6 fw-bold">¡Bienvenido(a) a mi página DEMO de la API de Rick and Morty!</h1>
+            <p class="col fs-4">
+              Aquí podrás explorar el increíble universo de Rick and Morty y obtener información sobre tus personajes
+              favoritos. ¿Estás listo para embarcarte en una aventura interdimensional?
+            </p>
+          </div>
+        </div>
+        <div class="col-lg d-flex ">
+          <img src="assets/rick-morty.webp" class="img-fluid " alt="...">
+        </div>
+      </div>
+  
+      <div class="about py-5">
+        <h3 class="text-center">Propósito de este mini proyecto</h3>
+        <p class="text-center">El motivo principal de este proyecto es incluirlo en mi portafolio personal. Como aspirante a desarrollador(a)
+          web, considero que es crucial demostrar mis habilidades y conocimientos en la práctica. Al construir esta página
+          utilizando la API de Rick and Morty, puedo mostrar mi capacidad para consumir datos de una API externa y
+          utilizarlos para crear una experiencia interactiva y atractiva para los usuarios.</p>
+      </div>
+      <div class="about-me">
+        <h3 class="text-center">Acerca de mi</h3>
+        <div class="row justify-content-center py-5">
+          <div class="img-container col-lg">
+            <img class="img-fluid " src="assets/profile.webp" alt="foto de perfil">
+          </div>
+          <div class="card col-lg">
+            <div class="card-body ">
+              <p class="card-text"><i class="bi bi-heart"></i> A passionate Self-taught Mobile Development</p>
+              <p class="card-text"><i class="bi bi-journal-text"></i> Currently learning Mobile dev and Full Stack Web Development</p>
+              <p class="card-text"><i class="bi bi-emoji-smile"></i> Always learning new things</p>
+              <p class="card-text"><i class="bi bi-laptop"></i> Proficient in Java, Kotlin, HTML, CSS, and JavaScript</p>
+              <p class="card-text"><i class="bi bi-iphone"></i> Experienced in developing both Android applications</p>
+              <p class="card-text"><i class="bi bi-magic"></i> Interested in exploring new technologies and frameworks</p>
+              <p class="card-text"><i class="bi bi-people"></i> Collaborative team player with excellent communication skills</p>
+              <p class="card-text"><i class="bi bi-people"></i> Pursuing a degree in Computer Science</p>
+              <p class="card-text"><i class="bi bi-globe"></i> Enthusiastic about creating apps that can make a positive impact on people's lives</p>
+              <p class="card-text"><i class="bi bi-star"></i> Striving to create innovative and user-friendly mobile applications</p>
+              <p class="card-text"><i class="bi bi-rocket"></i> Excited about the possibilities of the mobile app industry and its future growth potential</p>
+            </div>
+          </div>
+        </div>
     
-    <script  type="module" src="./js/index.js"></script>
+      </div>
+    </div>
+  </div>
+ 
+
+  <div class="footer">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+          <h4>Contacto</h4>
+          <ul class="list-unstyled d-flex justify-content-around">
+            <li><a href="https://github.com/GrandaCoder"><i class="bi bi-github"></i> Github</a></li>
+            <li><a href="https://www.linkedin.com/in/camilo-granda-907020263/"><i class="bi bi-linkedin"></i> LinkedIn</a></li>
+            <!-- whatsapp -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -11,6 +11,6 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 async function main() {
-    const character = await filterCharacters({name: 'rick'});
+    const character = await getMultipleCharacters([1,183]);
     console.log(character);
 }
