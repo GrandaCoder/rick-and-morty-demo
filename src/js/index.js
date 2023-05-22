@@ -1,16 +1,21 @@
-import {
-    getCharacter,
-    getAllCharacters,
-    getMultipleCharacters,
-    filterCharacters
-} from './services/characteres.mjs';
+import{
+    loadPage
+} from './router/navigation.mjs'
 
+import {
+    getHash
+} from './utils/hashControler.mjs'
 
 window.addEventListener('DOMContentLoaded', () => {
         main();
 })
 
+window.addEventListener("hashchange", function() {
+    main();
+  });
+
+
 async function main() {
-    const character = await getMultipleCharacters([1,183]);
-    console.log(character);
+    const paginaActual = getHash() || 'home';
+    loadPage(paginaActual);
 }

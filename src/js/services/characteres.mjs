@@ -5,8 +5,12 @@ async function getCharacter(id){
     return response.data;
 }
 
-async function getAllCharacters(){
-    const response = await instance.get('/character');
+async function getAllCharacters(params = {}){
+    const response = await instance.get('/character', {
+        params: {
+            ...params
+        }
+    });
     return response.data;
 }
 
