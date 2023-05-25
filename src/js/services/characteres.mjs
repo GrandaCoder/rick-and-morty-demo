@@ -29,9 +29,21 @@ async function filterCharacters(params){
     return response.data;
 }
 
+ function getCharactersFromEpisode(personajesFromURL){
+    const personajesDelEpisodio = [];
+    for (const personaje in personajesFromURL) {
+        const id = personajesFromURL[personaje].split("/").pop(); // Extrae el ID del personaje de la URL
+        personajesDelEpisodio.push(getCharacter(id));
+    }
+    console.log("fin episodio")
+
+    return personajesDelEpisodio;
+}
+
 export {
     getCharacter,
     getAllCharacters,
     getMultipleCharacters,
-    filterCharacters
+    filterCharacters,
+    getCharactersFromEpisode
 }

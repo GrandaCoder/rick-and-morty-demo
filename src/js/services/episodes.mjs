@@ -1,3 +1,5 @@
+import { instance } from "./axios.mjs";
+
 async function getEpisode(id){
     const response = await instance.get(`/episode/${id}`);
     return response.data;

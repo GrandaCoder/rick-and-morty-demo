@@ -7,12 +7,21 @@ import {
 }  from '../utils/getNodes.mjs';
 
 import {
-    getAllCharacters
+    getAllCharacters,
+    getCharactersFromEpisode
 } from '../services/characteres.mjs'
 
 import {
     renderizarPersonajes
 } from '../components/cards.mjs'
+
+import {
+    renderizarEpisodios
+} from '../components/tables.mjs'
+
+import {
+    getAllEpisodes
+} from '../services/episodes.mjs'
 
 const containers = {
     home: homeContainer,
@@ -25,7 +34,20 @@ function loadPage(page){
     for (const key in containers) {
         containers[key].classList[key === page ? 'remove' : 'add']('d-none');
     }
-     cargarPersonajes();
+    navigate(page);
+}
+
+function navigate(page){
+    switch (page) {
+        case "characters":
+            cargarPersonajes();
+            break;
+        case "episodes":
+            cargarEpisodios();
+    
+        default:
+            break;
+    }
 }
 
 async function cargarPersonajes(){
@@ -33,6 +55,13 @@ async function cargarPersonajes(){
     const characteres = allCharacteresData.results;
     renderizarPersonajes(characteres,cardsCharacterContainer);
 }
+
+async function cargarEpisodios(){
+    const allEpisodesData = await getAllEpisodes({page:1});
+    const episodios = allEpisodesData.results;
+    renderizarEpisodios(episodios,episodesTable);
+}
+
 
 export {
     loadPage

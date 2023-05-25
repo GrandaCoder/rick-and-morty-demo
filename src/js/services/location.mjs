@@ -1,3 +1,5 @@
+import { instance } from "./axios.mjs";
+
 async function getAllLocations(){
     const response = await instance.get('/location');
     return response.data;
