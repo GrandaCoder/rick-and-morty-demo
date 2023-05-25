@@ -3,7 +3,9 @@ import {
     charactersContainer,
     locationsContainer,
     episodesContainer,
-    cardsCharacterContainer
+    cardsCharacterContainer,
+    episodesTable,
+    locationsTable
 }  from '../utils/getNodes.mjs';
 
 import {
@@ -16,12 +18,17 @@ import {
 } from '../components/cards.mjs'
 
 import {
-    renderizarEpisodios
+    renderizarEpisodios,
+    renderizarLocations
 } from '../components/tables.mjs'
 
 import {
     getAllEpisodes
 } from '../services/episodes.mjs'
+
+import {
+    getAllLocations,
+} from '../services/location.mjs'
 
 const containers = {
     home: homeContainer,
@@ -44,7 +51,10 @@ function navigate(page){
             break;
         case "episodes":
             cargarEpisodios();
-    
+            break;
+        case "locations":
+            cargarLocations();
+            break;
         default:
             break;
     }
@@ -60,6 +70,12 @@ async function cargarEpisodios(){
     const allEpisodesData = await getAllEpisodes({page:1});
     const episodios = allEpisodesData.results;
     renderizarEpisodios(episodios,episodesTable);
+}
+
+async function cargarLocations(){
+    const allLocationsData = await getAllLocations({page:1});
+    const locations = allLocationsData.results;
+    renderizarLocations(locations,locationsTable);
 }
 
 

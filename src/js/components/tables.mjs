@@ -17,15 +17,11 @@ function createTrEpisode(episode) {
 
     const tdTemporada = document.createElement('td');
     tdTemporada.textContent = episode.episode;
-    
-    // const tdPersonajes = document.createElement('td');
-    // tdPersonajes.textContent = "episod";
 
     tr.appendChild(thIdEpisode);
     tr.appendChild(tdEpisodeName);
     tr.appendChild(tdEpisodeAirDate);
     tr.appendChild(tdTemporada);
-    // tr.appendChild(tdPersonajes);
     
     return tr;
 }
@@ -68,6 +64,21 @@ function createTrLocation(location) {
     return tr;
 }
 
+function renderizarLocations(locations, container){
+    const tableRows = crearLocations(locations);
+    container.innerHTML = '';
+    container.append(...tableRows);
+}
+
+function crearLocations(locations){
+    const  tableRows = [];
+    locations.forEach(location => {
+        tableRows.push(createTrLocation(location));
+    })
+    return tableRows;
+}
+
 export {
-    renderizarEpisodios
+    renderizarEpisodios,
+    renderizarLocations
 }
